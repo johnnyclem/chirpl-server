@@ -11,16 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131025184648) do
+ActiveRecord::Schema.define(version: 20131025184507) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "inputs", force: true do |t|
+    t.integer  "job_id"
     t.string   "key"
     t.string   "frameRate"
     t.string   "resolution"
     t.string   "aspectRatio"
     t.string   "interlaced"
     t.string   "container"
-    t.integer  "job_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -30,13 +33,20 @@ ActiveRecord::Schema.define(version: 20131025184648) do
     t.string   "version"
     t.string   "jobId"
     t.string   "pipelineId"
-    t.integer  "input_id"
     t.string   "outputKeyPrefix"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+  create_table "output_keys", force: true do |t|
+    t.integer  "playlist_id"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "outputs", force: true do |t|
+    t.integer  "job_id"
     t.string   "presetId"
     t.string   "key"
     t.string   "thumbnailPattern"
@@ -46,7 +56,15 @@ ActiveRecord::Schema.define(version: 20131025184648) do
     t.string   "duration"
     t.string   "width"
     t.string   "height"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "playlists", force: true do |t|
     t.integer  "job_id"
+    t.string   "name"
+    t.string   "format"
+    t.string   "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

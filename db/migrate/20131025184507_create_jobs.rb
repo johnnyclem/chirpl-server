@@ -38,7 +38,6 @@ class CreateJobs < ActiveRecord::Migration
       t.belongs_to :job
       t.string :name
       t.string :format
-      t.array  :outputKeys
       t.string :status
       t.timestamps
     end
