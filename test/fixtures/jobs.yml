@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  state: MyString
+  version: MyString
+  jobId: MyString
+  pipelineId: MyString
+  input_id: MyString
+  outputKeyPrefix: MyString
+
+two:
+  state: MyString
+  version: MyString
+  jobId: MyString
+  pipelineId: MyString
+  input_id: MyString
+  outputKeyPrefix: MyString

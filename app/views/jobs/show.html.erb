@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>State:</strong>
+  <%= @job.state %>
+</p>
+
+<p>
+  <strong>Version:</strong>
+  <%= @job.version %>
+</p>
+
+<p>
+  <strong>Jobid:</strong>
+  <%= @job.jobId %>
+</p>
+
+<p>
+  <strong>Pipelineid:</strong>
+  <%= @job.pipelineId %>
+</p>
+
+<p>
+  <strong>Input:</strong>
+  <%= @job.input_id %>
+</p>
+
+<p>
+  <strong>Outputkeyprefix:</strong>
+  <%= @job.outputKeyPrefix %>
+</p>
+
+<%= link_to 'Edit', edit_job_path(@job) %> |
+<%= link_to 'Back', jobs_path %>

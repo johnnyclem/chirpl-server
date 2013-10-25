@@ -1,0 +1,47 @@
+<h1>Listing outputs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Presetid</th>
+      <th>Key</th>
+      <th>Thumbnailpattern</th>
+      <th>Rotate</th>
+      <th>Segmentduration</th>
+      <th>Status</th>
+      <th>Duration</th>
+      <th>Width</th>
+      <th>Height</th>
+      <th>Job</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @outputs.each do |output| %>
+      <tr>
+        <td><%= output.id %></td>
+        <td><%= output.presetId %></td>
+        <td><%= output.key %></td>
+        <td><%= output.thumbnailPattern %></td>
+        <td><%= output.rotate %></td>
+        <td><%= output.segmentDuration %></td>
+        <td><%= output.status %></td>
+        <td><%= output.duration %></td>
+        <td><%= output.width %></td>
+        <td><%= output.height %></td>
+        <td><%= output.job_id %></td>
+        <td><%= link_to 'Show', output %></td>
+        <td><%= link_to 'Edit', edit_output_path(output) %></td>
+        <td><%= link_to 'Destroy', output, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Output', new_output_path %>

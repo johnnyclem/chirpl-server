@@ -1,0 +1,39 @@
+<h1>Listing inputs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Framerate</th>
+      <th>Resolution</th>
+      <th>Aspectratio</th>
+      <th>Interlaced</th>
+      <th>Container</th>
+      <th>Job</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @inputs.each do |input| %>
+      <tr>
+        <td><%= input.key %></td>
+        <td><%= input.frameRate %></td>
+        <td><%= input.resolution %></td>
+        <td><%= input.aspectRatio %></td>
+        <td><%= input.interlaced %></td>
+        <td><%= input.container %></td>
+        <td><%= input.job_id %></td>
+        <td><%= link_to 'Show', input %></td>
+        <td><%= link_to 'Edit', edit_input_path(input) %></td>
+        <td><%= link_to 'Destroy', input, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Input', new_input_path %>

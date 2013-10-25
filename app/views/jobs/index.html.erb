@@ -1,0 +1,37 @@
+<h1>Listing jobs</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>Version</th>
+      <th>Jobid</th>
+      <th>Pipelineid</th>
+      <th>Input</th>
+      <th>Outputkeyprefix</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @jobs.each do |job| %>
+      <tr>
+        <td><%= job.state %></td>
+        <td><%= job.version %></td>
+        <td><%= job.jobId %></td>
+        <td><%= job.pipelineId %></td>
+        <td><%= job.input_id %></td>
+        <td><%= job.outputKeyPrefix %></td>
+        <td><%= link_to 'Show', job %></td>
+        <td><%= link_to 'Edit', edit_job_path(job) %></td>
+        <td><%= link_to 'Destroy', job, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Job', new_job_path %>

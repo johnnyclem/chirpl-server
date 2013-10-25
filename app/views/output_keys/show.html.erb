@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @output_key.name %>
+</p>
+
+<p>
+  <strong>Playlist:</strong>
+  <%= @output_key.playlist_id %>
+</p>
+
+<%= link_to 'Edit', edit_output_key_path(@output_key) %> |
+<%= link_to 'Back', output_keys_path %>

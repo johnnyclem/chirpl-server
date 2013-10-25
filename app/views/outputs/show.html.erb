@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Id:</strong>
+  <%= @output.id %>
+</p>
+
+<p>
+  <strong>Presetid:</strong>
+  <%= @output.presetId %>
+</p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @output.key %>
+</p>
+
+<p>
+  <strong>Thumbnailpattern:</strong>
+  <%= @output.thumbnailPattern %>
+</p>
+
+<p>
+  <strong>Rotate:</strong>
+  <%= @output.rotate %>
+</p>
+
+<p>
+  <strong>Segmentduration:</strong>
+  <%= @output.segmentDuration %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @output.status %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @output.duration %>
+</p>
+
+<p>
+  <strong>Width:</strong>
+  <%= @output.width %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @output.height %>
+</p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @output.job_id %>
+</p>
+
+<%= link_to 'Edit', edit_output_path(@output) %> |
+<%= link_to 'Back', outputs_path %>

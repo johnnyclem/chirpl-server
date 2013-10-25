@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  key: MyString
+  frameRate: MyString
+  resolution: MyString
+  aspectRatio: MyString
+  interlaced: MyString
+  container: MyString
+  job_id: 1
+
+two:
+  key: MyString
+  frameRate: MyString
+  resolution: MyString
+  aspectRatio: MyString
+  interlaced: MyString
+  container: MyString
+  job_id: 1

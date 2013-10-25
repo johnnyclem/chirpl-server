@@ -1,0 +1,61 @@
+<%= form_for(@output) do |f| %>
+  <% if @output.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@output.errors.count, "error") %> prohibited this output from being saved:</h2>
+
+      <ul>
+      <% @output.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :id %><br>
+    <%= f.number_field :id %>
+  </div>
+  <div class="field">
+    <%= f.label :presetId %><br>
+    <%= f.text_field :presetId %>
+  </div>
+  <div class="field">
+    <%= f.label :key %><br>
+    <%= f.text_field :key %>
+  </div>
+  <div class="field">
+    <%= f.label :thumbnailPattern %><br>
+    <%= f.text_field :thumbnailPattern %>
+  </div>
+  <div class="field">
+    <%= f.label :rotate %><br>
+    <%= f.text_field :rotate %>
+  </div>
+  <div class="field">
+    <%= f.label :segmentDuration %><br>
+    <%= f.text_field :segmentDuration %>
+  </div>
+  <div class="field">
+    <%= f.label :status %><br>
+    <%= f.text_field :status %>
+  </div>
+  <div class="field">
+    <%= f.label :duration %><br>
+    <%= f.text_field :duration %>
+  </div>
+  <div class="field">
+    <%= f.label :width %><br>
+    <%= f.text_field :width %>
+  </div>
+  <div class="field">
+    <%= f.label :height %><br>
+    <%= f.text_field :height %>
+  </div>
+  <div class="field">
+    <%= f.label :job_id %><br>
+    <%= f.number_field :job_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

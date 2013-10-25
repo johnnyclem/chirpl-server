@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Key:</strong>
+  <%= @input.key %>
+</p>
+
+<p>
+  <strong>Framerate:</strong>
+  <%= @input.frameRate %>
+</p>
+
+<p>
+  <strong>Resolution:</strong>
+  <%= @input.resolution %>
+</p>
+
+<p>
+  <strong>Aspectratio:</strong>
+  <%= @input.aspectRatio %>
+</p>
+
+<p>
+  <strong>Interlaced:</strong>
+  <%= @input.interlaced %>
+</p>
+
+<p>
+  <strong>Container:</strong>
+  <%= @input.container %>
+</p>
+
+<p>
+  <strong>Job:</strong>
+  <%= @input.job_id %>
+</p>
+
+<%= link_to 'Edit', edit_input_path(@input) %> |
+<%= link_to 'Back', inputs_path %>

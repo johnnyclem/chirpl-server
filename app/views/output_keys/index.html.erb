@@ -1,0 +1,29 @@
+<h1>Listing output_keys</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Playlist</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @output_keys.each do |output_key| %>
+      <tr>
+        <td><%= output_key.name %></td>
+        <td><%= output_key.playlist_id %></td>
+        <td><%= link_to 'Show', output_key %></td>
+        <td><%= link_to 'Edit', edit_output_key_path(output_key) %></td>
+        <td><%= link_to 'Destroy', output_key, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Output key', new_output_key_path %>
