@@ -1,3 +1,5 @@
+require 'logger'
+
 class JobsController < ApplicationController
   before_action :set_job, only: [:show, :edit, :update, :destroy]
 
@@ -5,6 +7,11 @@ class JobsController < ApplicationController
   # GET /jobs.json
   def index
     @jobs = Job.all
+    
+    respond_to do |format|
+      format.html
+      format.json { render json: @jobs }
+    end
   end
 
   # GET /jobs/1
@@ -24,17 +31,25 @@ class JobsController < ApplicationController
   # POST /jobs
   # POST /jobs.json
   def create
-    @job = Job.new(job_params)
+    
+    data = JSON.parse(request.raw_post,:symbolize_names => true)
+    message = JSON.parse(data[:Message], :symbolize_names => true)
+    logger.debug message[:state]
 
-    respond_to do |format|
-      if @job.save
-        format.html { redirect_to @job, notice: 'Job was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @job }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @job.errors, status: :unprocessable_entity }
-      end
-    end
+    # @job = Job.new
+    # @job.createFromRawJSON(data)
+    
+    redirect_to jobs_path
+    # 
+    # respond_to do |format|
+    #   if @job.save
+    #     format.html { redirect_to @job, notice: 'Job was successfully created.' }
+    #     format.json { render action: 'show', status: :created, location: @job }
+    #   else
+    #     format.html { render action: 'new' }
+    #     format.json { render json: @job.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   # PATCH/PUT /jobs/1
